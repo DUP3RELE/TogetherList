@@ -7,7 +7,7 @@ export interface User {
 export interface ListItem {
 	id: number;
 	name: string;
-	users: User[];
+	users: string[];
 	newContent: boolean;
 }
 

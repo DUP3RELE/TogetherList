@@ -1,17 +1,18 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import lists from "@/src/components/test/lists";
+import { ListItem } from "@/src/app/database.types";
 
 const ListItemComponent = () => {
 	return (
 		<View>
-			{lists.map((list) => (
+			{lists.map((list: ListItem) => (
 				<View
 					key={list.id}
 					style={styles.listItem}
 				>
 					<Text style={styles.listTitle}>{list.name}</Text>
-					<Text style={styles.listUsers}>{list.users}</Text>
+					<Text style={styles.listUsers}>{list.users.join(", ")}</Text>{" "}
 					{list.newContent && <View style={styles.redDot} />}
 				</View>
 			))}
