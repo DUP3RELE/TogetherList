@@ -56,7 +56,11 @@ function RootLayoutNav() {
 		<ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
 			<Stack>
 				<Stack.Screen
-					name='(tabs)'
+					name='(user)'
+					options={{ headerShown: false }}
+				/>
+				<Stack.Screen
+					name='(auth)'
 					options={{ headerShown: false }}
 				/>
 				<Stack.Screen

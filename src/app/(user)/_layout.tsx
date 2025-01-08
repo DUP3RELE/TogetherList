@@ -33,10 +33,11 @@ export default function TabLayout() {
 				headerShown: useClientOnlyValue(false, true),
 			}}
 		>
+			{/* edycja taba */}
 			<Tabs.Screen
 				name='index'
 				options={{
-					title: "Tab One",
+					title: "Hello, user",
 					tabBarIcon: ({ color }) => (
 						<TabBarIcon
 							name='code'
@@ -65,7 +66,7 @@ export default function TabLayout() {
 			<Tabs.Screen
 				name='two'
 				options={{
-					title: "Tab Two",
+					title: "Hello, user",
 					tabBarIcon: ({ color }) => (
 						<TabBarIcon
 							name='code'
