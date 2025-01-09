@@ -1,7 +1,11 @@
 export interface User {
 	id: number;
-	name: string;
-	avatar_url: string;
+	email: string;
+	passwordHash: string;
+	userName: string;
+	avatarUrl?: string;
+	createdAt: Date;
+	lastLogin?: Date;
 }
 
 export interface ListItem {
@@ -9,6 +13,7 @@ export interface ListItem {
 	name: string;
 	users: string[];
 	newContent: boolean;
+	// createdAt: Date;
 }
 
 export interface ListComponentProps {
