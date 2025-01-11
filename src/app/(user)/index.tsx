@@ -7,9 +7,6 @@ export default function TabOneScreen() {
 		<View style={styles.container}>
 			<Text>Hello user!</Text>
 			<Text>Your lists:</Text>
-			<View>
-				<Text></Text>
-			</View>
 			<ListItemComponent />
 		</View>
 	);
