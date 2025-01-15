@@ -1,9 +1,12 @@
 import "react-native-url-polyfill/auto";
 import * as SecureStore from "expo-secure-store";
 import { createClient } from "@supabase/supabase-js";
+import Constants from "expo-constants";
 
-const SupabaseUrlEnv = process.env.SUPABASE_URL;
-const SupabaseAnonKeyEnv = process.env.SUPABASE_ANON_KEY;
+const SupabaseUrl = Constants.extra.SUPABASE_URL;
+const SupabaseAnonKey = Constants.extra.SUPABASE_ANON_KEY;
+console.log(Constants.extra);
+
 
 const ExpoSecureStoreAdapter = {
 	getItem: (key: string) => {
@@ -17,10 +20,11 @@ const ExpoSecureStoreAdapter = {
 	},
 };
 
-const supabaseUrl = SupabaseUrlEnv || "default_supabase_url";
-const supabaseAnonKey = SupabaseAnonKeyEnv || "default_supabase_anon_key";
+if (!SupabaseUrl || !SupabaseAnonKey) {
+	throw new Error("Missing Supabase URL or Anon Key environment variables");
+}
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+export const supabase = createClient(SupabaseUrl, SupabaseAnonKey, {
 	auth: {
 		storage: ExpoSecureStoreAdapter as any,
 		autoRefreshToken: true,
