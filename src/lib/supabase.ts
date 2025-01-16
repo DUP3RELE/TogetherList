@@ -3,7 +3,7 @@ import * as SecureStore from "expo-secure-store";
 import { createClient } from "@supabase/supabase-js";
 import { EXPO_SUPABASE_URL, EXPO_SUPABASE_ANON_KEY } from "@env";
 
-console.log(EXPO_SUPABASE_ANON_KEY, EXPO_SUPABASE_URL);
+
 const ExpoSecureStoreAdapter = {
 	getItem: (key: string) => {
 		return SecureStore.getItemAsync(key);
@@ -16,15 +16,11 @@ const ExpoSecureStoreAdapter = {
 	},
 };
 
-const SupabaseUrl = EXPO_SUPABASE_URL;
-const SupabaseAnonKey = EXPO_SUPABASE_ANON_KEY;
-console.log(SupabaseUrl, SupabaseAnonKey);
+const supabaseUrl = EXPO_SUPABASE_URL;
+const supabaseAnonKey = EXPO_SUPABASE_ANON_KEY;
 
-if (!SupabaseUrl || !SupabaseAnonKey) {
-	throw new Error("Missing Supabase URL or Anon Key environment variables");
-}
 
-export const supabase = createClient(SupabaseUrl, SupabaseAnonKey, {
+export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
 	auth: {
 		storage: ExpoSecureStoreAdapter as any,
 		autoRefreshToken: true,

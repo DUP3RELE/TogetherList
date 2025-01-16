@@ -1,4 +1,4 @@
 declare module "@env" {
 	export const EXPO_SUPABASE_URL: string;
-	export const EXPO_SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpvdHNsc3F3cHZra2NhdHJjb252Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzYzNDkxNDcsImV4cCI6MjA1MTkyNTE0N30.lhlnfJe1lRebyid44CpmsxjBnFYZHrpnIc9SzkCydAY";
+	export const EXPO_SUPABASE_ANON_KEY: string;
 }
