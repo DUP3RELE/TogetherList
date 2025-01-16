@@ -3,6 +3,7 @@ import * as SecureStore from "expo-secure-store";
 import { createClient } from "@supabase/supabase-js";
 import { EXPO_SUPABASE_URL, EXPO_SUPABASE_ANON_KEY } from "@env";
 
+console.log(EXPO_SUPABASE_ANON_KEY, EXPO_SUPABASE_URL);
 const ExpoSecureStoreAdapter = {
 	getItem: (key: string) => {
 		return SecureStore.getItemAsync(key);
@@ -15,8 +16,8 @@ const ExpoSecureStoreAdapter = {
 	},
 };
 
-const SupabaseUrl = "-";
-const SupabaseAnonKey = "-";
+const SupabaseUrl = EXPO_SUPABASE_URL;
+const SupabaseAnonKey = EXPO_SUPABASE_ANON_KEY;
 console.log(SupabaseUrl, SupabaseAnonKey);
 
 if (!SupabaseUrl || !SupabaseAnonKey) {

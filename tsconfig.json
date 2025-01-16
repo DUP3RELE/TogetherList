@@ -6,8 +6,7 @@
 		"skipLibCheck": true,
 		"resolveJsonModule": true,
 		"paths": {
-			"@/*": ["./*"],
-			"@env": ["./expo-env.ts"]
+			"@/*": ["./*"]
 		},
 		"types": ["@types/react", "@types/react-native"]
 	},
