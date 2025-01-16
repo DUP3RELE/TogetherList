@@ -12,7 +12,7 @@ const ListItemComponent = () => {
 					style={styles.listItem}
 				>
 					<Text style={styles.listTitle}>{list.name}</Text>
-					<Text style={styles.listUsers}>{list.users.join(", ")}</Text>{" "}
+					<Text style={styles.listUsers}>{list.users.join(", ")}</Text>
 					{list.newContent && <View style={styles.redDot} />}
 				</View>
 			))}

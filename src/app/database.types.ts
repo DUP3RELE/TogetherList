@@ -21,3 +21,4 @@ export interface ListComponentProps {
 	onItemToggle: (id: number) => void;
 	onItemRemove: (id: number) => void;
 }
+

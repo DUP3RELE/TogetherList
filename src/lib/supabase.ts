@@ -1,24 +1,23 @@
 import "react-native-url-polyfill/auto";
 import * as SecureStore from "expo-secure-store";
 import { createClient } from "@supabase/supabase-js";
-import Constants from "expo-constants";
-
-const SupabaseUrl = Constants.extra.SUPABASE_URL;
-const SupabaseAnonKey = Constants.extra.SUPABASE_ANON_KEY;
-console.log(Constants.extra);
-
+import { EXPO_SUPABASE_URL, EXPO_SUPABASE_ANON_KEY } from "@env";
 
 const ExpoSecureStoreAdapter = {
 	getItem: (key: string) => {
 		return SecureStore.getItemAsync(key);
 	},
 	setItem: (key: string, value: string) => {
-		SecureStore.setItemAsync(key, value);
+		return SecureStore.setItemAsync(key, value);
 	},
 	removeItem: (key: string) => {
-		SecureStore.deleteItemAsync(key);
+		return SecureStore.deleteItemAsync(key);
 	},
 };
+
+const SupabaseUrl = "-";
+const SupabaseAnonKey = "-";
+console.log(SupabaseUrl, SupabaseAnonKey);
 
 if (!SupabaseUrl || !SupabaseAnonKey) {
 	throw new Error("Missing Supabase URL or Anon Key environment variables");
