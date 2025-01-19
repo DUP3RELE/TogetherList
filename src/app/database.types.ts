@@ -1,3 +1,11 @@
+export type Json =
+	| string
+	| number
+	| boolean
+	| null
+	| { [key: string]: Json | undefined }
+	| Json[];
+
 export interface User {
 	id: number;
 	email: string;
@@ -8,17 +16,18 @@ export interface User {
 	lastLogin?: Date;
 }
 
+export interface List {
+	id: number;
+	list_name: string;
+	created_by_user_id: number;
+	created_at: Date;
+	is_shared: boolean;
+}
+
 export interface ListItem {
 	id: number;
 	name: string;
 	users: string[];
 	newContent: boolean;
-	// createdAt: Date;
+	createdAt: Date;
 }
-
-export interface ListComponentProps {
-	lists: ListItem[];
-	onItemToggle: (id: number) => void;
-	onItemRemove: (id: number) => void;
-}
-
