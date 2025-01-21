@@ -68,10 +68,17 @@ export default function TabLayout() {
 					),
 				}}
 			/>
+			{/* <Tabs.Screen
+				name='list'
+				options={{
+					title: "List",
+					headerShown: false,
+				}}
+			/> */}
 			<Tabs.Screen
 				name='two'
 				options={{
-					title: "Hello, user",
+					title: "Hello, doba",
 					tabBarIcon: ({ color }) => (
 						<TabBarIcon
 							name='code'

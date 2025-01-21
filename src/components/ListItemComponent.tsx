@@ -1,29 +1,28 @@
-import { StyleSheet, Text, Pressable } from "react-native";
+import { StyleSheet, Text, View, Image, Pressable } from "react-native";
 import Colors from "../constants/Colors";
 import { Tables } from "../app/types";
 import { Link, useSegments } from "expo-router";
 
-type ListsItemProps = {
-	list: Tables<"lists">;
+type ListItemProps = {
+	lists: Tables<"lists">;
 };
 
-const ListsComponent = ({ list }: ListsItemProps) => {
+const ListItemComponent = ({ lists }: ListItemProps) => {
 	const segments = useSegments();
 
 	return (
 		<Link
-			href={`/(user)/list/${list.id}`}
+			href={`/(user)`}
 			asChild
 		>
 			<Pressable style={styles.container}>
-				<Text style={styles.title}>{list.list_name}</Text>
-				<Text style={styles.title}>{list.created_at}</Text>
+				<Text style={styles.title}>{lists.list_name}</Text>
 			</Pressable>
 		</Link>
 	);
 };
 
-export default ListsComponent;
+export default ListItemComponent;
 
 const styles = StyleSheet.create({
 	container: {
