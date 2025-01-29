@@ -13,7 +13,6 @@ import AuthProvider from "../providers/AuthProvider";
 import QueryProvider from "../providers/QueryProvider";
 
 import { useColorScheme } from "@/src/components/useColorScheme";
-import ListScreen from "./(user)/list";
 
 export {
 	// Catch any errors thrown by the Layout component.
