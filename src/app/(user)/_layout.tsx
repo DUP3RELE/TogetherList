@@ -68,13 +68,13 @@ export default function TabLayout() {
 					),
 				}}
 			/>
-			{/* <Tabs.Screen
+			<Tabs.Screen
 				name='list'
 				options={{
-					title: "List",
-					headerShown: false,
+					title: "dupens",
+					tabBarStyle: { display: "none" },
 				}}
-			/> */}
+			/>
 			<Tabs.Screen
 				name='two'
 				options={{
