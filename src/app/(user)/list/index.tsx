@@ -10,7 +10,7 @@ export default function ListScreen() {
 	}
 
 	if (error) {
-		return <Text>Failed to fetch list</Text>;
+		return <Text>Failed to fetch list im back</Text>;
 	}
 
 	return (
